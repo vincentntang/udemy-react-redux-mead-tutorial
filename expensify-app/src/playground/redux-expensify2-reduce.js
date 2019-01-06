@@ -140,6 +140,18 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
   });
 };
 
+// Get visible rent
+const getVisibleRent = (expenses, { text, sortBy, startDate, endDate }) => {
+  return expenses.filter(expense => {
+    const textMatch = expense.description
+      .toLowerCase()
+      .includes(text.toLowerCase());
+
+    return textMatch;
+  });
+};
+// set Text Filter
+
 // Store Creation
 const store = createStore(
   combineReducers({
@@ -152,6 +164,9 @@ store.subscribe(() => {
   const state = store.getState();
   const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
   console.log(visibleExpenses);
+
+  const visibleRent = getVisibleRent(state.expenses, state.filters);
+  console.log(visibleRent, "visibleRent");
 });
 
 const expenseOne = store.dispatch(
