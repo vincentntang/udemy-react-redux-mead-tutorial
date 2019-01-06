@@ -54,8 +54,3 @@ store.dispatch({
   type: "DECREMENT",
   decrementBy: 10
 });
-
-store.dispatch({
-  type: "SET",
-  count: 101
-});
