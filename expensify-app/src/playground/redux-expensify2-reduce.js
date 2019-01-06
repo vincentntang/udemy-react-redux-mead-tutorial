@@ -130,8 +130,9 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
       typeof startDate !== "number" || expense.createdAt >= startDate;
     const endDateMatch =
       typeof endDate !== "number" || expense.createdAt <= endDate;
-    const textMatch = true;
-
+    const textMatch = expense.description
+      .toLowerCase()
+      .includes(text.toLowerCase());
     // figure out if expenses.description as the text variable string inside of it
     // includes
     // convert both strings to lower case
@@ -139,18 +140,6 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
     return startDateMatch && endDateMatch && textMatch;
   });
 };
-
-// Get visible rent
-const getVisibleRent = (expenses, { text, sortBy, startDate, endDate }) => {
-  return expenses.filter(expense => {
-    const textMatch = expense.description
-      .toLowerCase()
-      .includes(text.toLowerCase());
-
-    return textMatch;
-  });
-};
-// set Text Filter
 
 // Store Creation
 const store = createStore(
@@ -164,9 +153,6 @@ store.subscribe(() => {
   const state = store.getState();
   const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
   console.log(visibleExpenses);
-
-  const visibleRent = getVisibleRent(state.expenses, state.filters);
-  console.log(visibleRent, "visibleRent");
 });
 
 const expenseOne = store.dispatch(

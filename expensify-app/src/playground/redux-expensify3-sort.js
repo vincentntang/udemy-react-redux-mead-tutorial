@@ -125,19 +125,21 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
 
 // Get visible expenses
 const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
-  return expenses.filter(expense => {
-    const startDateMatch =
-      typeof startDate !== "number" || expense.createdAt >= startDate;
-    const endDateMatch =
-      typeof endDate !== "number" || expense.createdAt <= endDate;
-    const textMatch = true;
+  return expenses
+    .filter(expense => {
+      const startDateMatch =
+        typeof startDate !== "number" || expense.createdAt >= startDate;
+      const endDateMatch =
+        typeof endDate !== "number" || expense.createdAt <= endDate;
+      const textMatch = true;
 
-    // figure out if expenses.description as the text variable string inside of it
-    // includes
-    // convert both strings to lower case
-
-    return startDateMatch && endDateMatch && textMatch;
-  });
+      return startDateMatch && endDateMatch && textMatch;
+    })
+    .sort((a, b) => {
+      if (sortBy === "date") {
+        return a.createdAt < b.createdAt ? 1 : -1;
+      }
+    });
 };
 
 // Get visible rent
@@ -170,7 +172,7 @@ store.subscribe(() => {
 });
 
 const expenseOne = store.dispatch(
-  addExpense({ description: "Rent", amount: 100, createdAt: 1000 })
+  addExpense({ description: "Rent", amount: 100, createdAt: -21000 })
 );
 const expenseTwo = store.dispatch(
   addExpense({ description: "Coffee", amount: 300, createdAt: -1000 })
