@@ -10,4 +10,6 @@ const store = createStore((state = { count: 0 }) => {
 
 console.log(store.getState());
 
+// Actions
+
 // console.log("101");
