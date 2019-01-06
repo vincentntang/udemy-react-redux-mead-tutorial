@@ -138,21 +138,11 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
     .sort((a, b) => {
       if (sortBy === "date") {
         return a.createdAt < b.createdAt ? 1 : -1;
+      } else if (sortBy === "amount") {
+        return a.amount < b.amount ? 1 : -1;
       }
     });
 };
-
-// Get visible rent
-const getVisibleRent = (expenses, { text, sortBy, startDate, endDate }) => {
-  return expenses.filter(expense => {
-    const textMatch = expense.description
-      .toLowerCase()
-      .includes(text.toLowerCase());
-
-    return textMatch;
-  });
-};
-// set Text Filter
 
 // Store Creation
 const store = createStore(
@@ -166,9 +156,6 @@ store.subscribe(() => {
   const state = store.getState();
   const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
   console.log(visibleExpenses);
-
-  const visibleRent = getVisibleRent(state.expenses, state.filters);
-  console.log(visibleRent, "visibleRent");
 });
 
 const expenseOne = store.dispatch(
@@ -181,10 +168,10 @@ const expenseTwo = store.dispatch(
 // store.dispatch(removeExpense({ id: expenseOne.expense.id }));
 // store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
 
-store.dispatch(setTextFilter("rent"));
+// store.dispatch(setTextFilter("rent"));
 // store.dispatch(setTextFilter());
 
-// store.dispatch(sortByAmount()); // amount
+store.dispatch(sortByAmount()); // amount
 // store.dispatch(sortByDate()); // date
 
 // store.dispatch(setStartDate(0));

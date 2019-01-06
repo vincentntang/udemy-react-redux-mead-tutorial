@@ -165,10 +165,10 @@ const expenseTwo = store.dispatch(
 // store.dispatch(removeExpense({ id: expenseOne.expense.id }));
 // store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
 
-store.dispatch(setTextFilter("rent"));
+// store.dispatch(setTextFilter("rent"));
 // store.dispatch(setTextFilter());
 
-// store.dispatch(sortByAmount()); // amount
+store.dispatch(sortByAmount()); // amount
 // store.dispatch(sortByDate()); // date
 
 // store.dispatch(setStartDate(0));
