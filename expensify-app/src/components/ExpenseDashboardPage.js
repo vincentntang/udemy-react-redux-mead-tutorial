@@ -1,7 +1,11 @@
 import React from "react";
+import ExpenseList from "./ExpenseList";
 
 const ExpenseDashboardPage = () => (
-  <div>This is from the dashboard component</div>
+  <div>
+    <ExpenseList />
+    This is from the dashboard component
+  </div>
 );
 
 export default ExpenseDashboardPage;
