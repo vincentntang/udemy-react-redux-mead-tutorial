@@ -11,8 +11,14 @@ const ExpenseListFilters = props => (
         props.dispatch(setTextFilter(e.target.value));
       }}
     />
+    <select>
+      <option value="date">Date</option>
+      <option value="amount">Amount</option>
+    </select>
   </div>
 );
+
+// setup value and onChange for select
 
 const mapStateToProps = state => {
   return {

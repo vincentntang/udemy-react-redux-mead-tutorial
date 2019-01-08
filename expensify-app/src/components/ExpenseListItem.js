@@ -7,9 +7,8 @@ import { removeExpense } from "../actions/expenses";
 
 // connect function intercepts the props coming from {...expense} and passes those along with dispatch
 // into component it wraps
-
 const ExpenseListItem = ({ dispatch, id, description, amount, createdAt }) => {
-  console.log(id);
+  // console.log(id);
   return (
     <div>
       <h3>{description}</h3>
