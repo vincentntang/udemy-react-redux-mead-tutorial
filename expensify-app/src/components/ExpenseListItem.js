@@ -4,6 +4,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { removeExpense } from "../actions/expenses";
+import { Link } from "react-router-dom";
 
 // connect function intercepts the props coming from {...expense} and passes those along with dispatch
 // into component it wraps
@@ -11,7 +12,9 @@ const ExpenseListItem = ({ dispatch, id, description, amount, createdAt }) => {
   // console.log(id);
   return (
     <div>
-      <h3>{description}</h3>
+      <Link to={`/edit/${id}`}>
+        <h3>{description}</h3>
+      </Link>
       <p>
         {amount} - {createdAt}
       </p>
