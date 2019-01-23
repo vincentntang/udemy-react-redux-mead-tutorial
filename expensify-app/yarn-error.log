@@ -1,34 +1,30 @@
 Arguments: 
-  /usr/local/Cellar/node/10.8.0/bin/node /usr/local/bin/yarn add babel-plugin-transfomr-class-properties@6.24.1
+  C:\Program Files\nodejs\node.exe C:\Users\Vincent\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js test --watch
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Vincent\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\Boxcryptor\bin;C:\Program Files\nodejs;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft VS Code\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Program Files\Docker Toolbox;C:\Users\Vincent\AppData\Local\atom\bin;C:\Users\Vincent\AppData\Roaming\npm
 
 Yarn version: 
-  1.9.4
+  1.7.0
 
 Node version: 
-  10.8.0
+  8.12.0
 
 Platform: 
-  darwin x64
+  win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/babel-plugin-transfomr-class-properties: Not found
-      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:64202:18)
-      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:137468:22)
-      at Request.emit (events.js:182:13)
-      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:138440:10)
-      at Request.emit (events.js:182:13)
-      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:138362:12)
-      at Object.onceWrapper (events.js:273:13)
-      at IncomingMessage.emit (events.js:187:15)
-      at endReadableNT (_stream_readable.js:1081:12)
-      at process._tickCallback (internal/process/next_tick.js:63:19)
+  SyntaxError: C:\www\react-mead-85-plusv1\package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at C:\Users\Vincent\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\Vincent\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:98:30)
+      at C:\Users\Vincent\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:109:13
+      at <anonymous>
 
 npm manifest: 
   {
-    "name": "indecision-app",
+    "name": "expensify",
     "version": "1.0.0",
     "main": "index.js",
     "author": "Andrew Mead",
@@ -36,17 +32,34 @@ npm manifest:
     "scripts": {
       "serve": "live-server public/",
       "build": "webpack",
-      "dev-server": "webpack-dev-server"
+      "dev-server": "webpack-dev-server",
+      "test": "jest --watch"
     },
     "dependencies": {
       "babel-cli": "6.24.1",
       "babel-core": "6.25.0",
       "babel-loader": "7.1.1",
+      "babel-plugin-transform-class-properties": "6.24.1",
+      "babel-plugin-transform-object-rest-spread": "^6.23.0",
       "babel-preset-env": "1.5.2",
       "babel-preset-react": "6.24.1",
+      "css-loader": "^0.28.4",
+      "jest": "^20.0.4",
       "live-server": "^1.2.0",
+      "moment": "^2.18.1",
+      "node-sass": "^4.5.3",
+      "normalize.css": "^7.0.0",
       "react": "16.0.0",
+      "react-addons-shallow-compare": "^15.6.0",
+      "react-dates": "^12.7.0",
       "react-dom": "16.0.0",
+      "react-modal": "^3.6.1",
+      "react-redux": "^5.0.5",
+      "react-router-dom": "^4.2.2",
+      "redux": "^3.7.2",
+      "sass-loader": "^6.0.6",
+      "style-loader": "^0.18.2",
+      "uuid": "^3.1.0",
       "validator": "8.0.0",
       "webpack": "3.1.0",
       "webpack-dev-server": "2.5.1"
@@ -483,6 +496,10 @@ Lockfile:
     version "6.13.0"
     resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
   
+  babel-plugin-syntax-class-properties@^6.8.0:
+    version "6.13.0"
+    resolved "https://registry.yarnpkg.com/babel-plugin-syntax-class-properties/-/babel-plugin-syntax-class-properties-6.13.0.tgz#d7eb23b79a317f8543962c505b827c7d6cac27de"
+  
   babel-plugin-syntax-exponentiation-operator@^6.8.0:
     version "6.13.0"
     resolved "https://registry.yarnpkg.com/babel-plugin-syntax-exponentiation-operator/-/babel-plugin-syntax-exponentiation-operator-6.13.0.tgz#9ee7e8337290da95288201a6a57f4170317830de"
@@ -506,6 +523,15 @@ Lockfile:
       babel-helper-remap-async-to-generator "^6.24.1"
       babel-plugin-syntax-async-functions "^6.8.0"
       babel-runtime "^6.22.0"
+  
+  babel-plugin-transform-class-properties@6.24.1:
+    version "6.24.1"
+    resolved "https://registry.yarnpkg.com/babel-plugin-transform-class-properties/-/babel-plugin-transform-class-properties-6.24.1.tgz#6a79763ea61d33d36f37b611aa9def81a81b46ac"
+    dependencies:
+      babel-helper-function-name "^6.24.1"
+      babel-plugin-syntax-class-properties "^6.8.0"
+      babel-runtime "^6.22.0"
+      babel-template "^6.24.1"
   
   babel-plugin-transform-es2015-arrow-functions@^6.22.0:
     version "6.22.0"
