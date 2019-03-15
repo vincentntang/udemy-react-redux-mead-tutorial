@@ -1,1 +1,1 @@
-# react-mead-85-plus-
+# React/Redux tutorial from Andrew Mead
